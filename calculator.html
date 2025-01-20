@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+</head>
+<body>
+    <script>
+        let userBill = prompt("What is your bill?");
+        console.log(`User entered bill: ${userBill}`);
+
+        userBill = parseFloat(userBill);
+
+        if (isNaN(userBill) || userBill < 0) {
+            console.error("Invalid input! Please enter a positive number.");
+            alert("Please enter a valid positive number for the bill.");
+        } else {
+            const taxRate = 0.07;
+            const tipRate = 0.15;
+
+            let taxedBill = userBill + (userBill * taxRate);
+            console.log(`Taxed bill calculated: ${taxedBill}`);
+
+            let tip = taxedBill * tipRate;
+            console.log(`Tip calculated: ${tip}`);
+
+            let finalBill = taxedBill + tip;
+            console.log(`Final bill calculated: ${finalBill}`);
+
+            alert(`Your final bill is: $${finalBill.toFixed(2)}`);
+        }
+    </script>
+</body>
+</html>
